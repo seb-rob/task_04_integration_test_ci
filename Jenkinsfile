@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     echo 'Starting server in background or in detach mode...'
-                    def serverProcess = sh(script: 'nohup node server.js & echo $!', returnStdout: true).trim()
+                    def serverProcess = sh(script: 'node server.js & echo $!', returnStdout: true).trim()
                     
                     // store process id for killing it
                     env.SERVER_PID = serverProcess
