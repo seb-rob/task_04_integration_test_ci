@@ -1,3 +1,6 @@
+// COULD NOT USE BECAUSE OF WINDOWS OS
+
+
 pipeline {
     agent any
     environment{
