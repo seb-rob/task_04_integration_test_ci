@@ -31,7 +31,8 @@ pipeline {
                 script {
                     // Run the Postman tests using Newman
                     echo 'Running integration tests with Newman...'
-                    sh 'newman run simple-api-tests.json'
+                    def newmanOutput = sh(script: 'newman run simple-api-tests.json', returnStdout: true).trim()
+                    echo "Newman Test Output: ${newmanOutput}"
                 }
             }
         }
